@@ -1,5 +1,4 @@
-import React from 'react';
-import Menu from '../../menu';
+import React, { useState } from 'react';
 import { Table, dataType } from './table/table';
 
 const data: Array<dataType> = [
@@ -27,11 +26,7 @@ const data: Array<dataType> = [
 
 export default function Dashboard() {
   return (
-    <div className="flex flex-row h-screen">
-      {/* Menu column */}
-      <Menu />
-      {/* Content column */}
-      <div className="flex-1 bg-white p-4">Content</div>
+    <div className="">
       <Table data={data} />
     </div>
   );

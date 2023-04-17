@@ -1,6 +1,11 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+interface NavlinkItemProps {
+  item: NavlinkItem;
+  toggleHandler: () => void;
+}
+
 interface NavlinkItem {
   url: string;
   active?: string;
@@ -8,7 +13,7 @@ interface NavlinkItem {
   label: string;
 }
 
-export default function navlinkitem(item: NavlinkItem) {
+export default function Navlinkitem({ item, toggleHandler }: NavlinkItemProps) {
   const location = useLocation();
   return (
     <li className="mb-2">
@@ -20,6 +25,7 @@ export default function navlinkitem(item: NavlinkItem) {
             : item.inactive ||
               'block text-gray-400 px-3 py-2 transition duration-200 ease-in-out hover:text-white hover:bg-gray-700 rounded-xl'
         }
+        onClick={toggleHandler}
       >
         {item.label}
       </NavLink>
