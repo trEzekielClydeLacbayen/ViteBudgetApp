@@ -2,8 +2,8 @@ import React from 'react';
 import Layout from './components/layout/layout';
 import ErrorPage from './components/pages/error-page';
 import Dashboard from './components/pages/dashboard/dashboard';
-import Profilepage from './components/pages/profilepage';
-import Settingspage from './components/pages/settingspage';
+import Profilepage from './components/pages/profile/profilepage';
+import Settingspage from './components/pages/settings/settingspage';
 
 import { createBrowserRouter } from 'react-router-dom';
 
