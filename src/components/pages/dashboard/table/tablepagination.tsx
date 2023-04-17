@@ -38,8 +38,22 @@ const Pagination = ({
   };
 
   return (
-    <div className="pagination">
-      <ul className="pagination-list">{renderPageNumbers()}</ul>
+    <div className="flex justify-center items-center space-x-4">
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
+        onClick={handlePrevClick}
+        disabled={currentPage === 1}
+      >
+        Prev
+      </button>
+      <ul className="flex">{renderPageNumbers()}</ul>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
+        onClick={handleNextClick}
+        disabled={currentPage === totalPages}
+      >
+        Next
+      </button>
     </div>
   );
 };
