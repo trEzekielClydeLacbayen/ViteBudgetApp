@@ -47,9 +47,6 @@ export const Table: React.FC<TableType> = ({ data }) => {
   );
   const slicedData: Array<IData> = filteredData.slice(start, end);
 
-  const emptyRows =
-    rowsPerPage - Math.min(rowsPerPage, filteredData.length - start);
-
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto">
