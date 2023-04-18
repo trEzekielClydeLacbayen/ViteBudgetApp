@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+
 import TableComponent from './tablecomponent';
-import { TableHeader } from './tableheadercomponent';
+import TableHeader from './tableheadercomponent';
+import TransactionForm from '../forms/transactionform';
 import Pagination from './tablepagination';
 
 export interface IData {
+  id: number,
   category: string;
   transaction: string;
   price: number;
-  date: Date;
 }
 
 type TableType = {
@@ -37,7 +39,15 @@ export const Table: React.FC<TableType> = ({ data }) => {
 
   const handleAddCategory = () => {};
 
-  const handleAddTransaction = () => {};
+  const [TransactionFormVisible, setTransactionFormVisible] = useState(false);
+  const handleAddTransaction = () => {
+    setTransactionFormVisible(true);
+  };
+
+  const AddTransaction: React.FC<IData> = (parameters) => {
+    data.push(parameters);
+    return null;
+  };
 
   const start = (page - 1) * rowsPerPage;
   const end = start + rowsPerPage;
@@ -60,6 +70,11 @@ export const Table: React.FC<TableType> = ({ data }) => {
               handleAddTransaction={handleAddTransaction}
             />
             <TableComponent slicedData={slicedData} rowsperpage={rowsPerPage} />
+            <TransactionForm
+              showModal={TransactionFormVisible}
+              setShowModal={setTransactionFormVisible}
+              addTransaction={AddTransaction}
+            />
             <Pagination
               totalItems={filteredData.length}
               itemsPerPage={rowsPerPage}

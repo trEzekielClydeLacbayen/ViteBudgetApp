@@ -7,7 +7,7 @@ type TableHeaderType = {
   handleAddTransaction: () => void;
 };
 
-export const TableHeader: React.FC<TableHeaderType> = ({
+const TableHeader: React.FC<TableHeaderType> = ({
   searchTerm,
   handleSearchTermChange,
   handleAddCategory,
@@ -103,3 +103,5 @@ export const TableHeader: React.FC<TableHeaderType> = ({
     </div>
   );
 };
+
+export default TableHeader;
