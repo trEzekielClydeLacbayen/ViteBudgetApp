@@ -13,9 +13,9 @@ export default function Layout({ children }: LayoutProps) {
       <Header />
       <main className="flex flex-row h-full">
         <div className="hidden md:block">
-          <Menu />
+          <Menu toggleHandler={() => {}} />
         </div>
-        <div className="flex-grow h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
+        <div className="flex-grow h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-gray-500 p-4">
           {children}
         </div>
       </main>

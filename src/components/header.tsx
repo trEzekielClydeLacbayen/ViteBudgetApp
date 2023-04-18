@@ -39,6 +39,11 @@ export default function Header() {
         <div
           className="fixed inset-0 z-50"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              handleMenuToggle();
+            }
+          }}
         >
           <div
             className="bg-gray-800 text-white w-48 p-4 absolute top-0 left-0 h-full z-50"
