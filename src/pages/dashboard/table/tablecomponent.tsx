@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface IData {
-  category: string;
-  transaction: string;
-  price: number;
-}
+import { IData } from './table';
 
 interface IHeader {
   label: string;
@@ -51,7 +46,7 @@ const TableComponent: React.FC<TableType> = ({ slicedData, rowsperpage }) => {
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
         {slicedData.map((row: IData) => (
-          <tr key={row.category}>
+          <tr key={row.id}>
             <td className="px-6 py-4 whitespace-nowrap">
               <div className="text-sm text-gray-900">{row.category}</div>
             </td>

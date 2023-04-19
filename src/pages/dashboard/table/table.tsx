@@ -57,8 +57,9 @@ export const Table: React.FC<TableType> = ({ data }) => {
       row.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
       row.transaction.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const slicedData: Array<IData> = filteredData.slice(start, end);
 
+  const slicedData: Array<IData> = filteredData.slice(start, end);
+  console.log(slicedData);
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto">
