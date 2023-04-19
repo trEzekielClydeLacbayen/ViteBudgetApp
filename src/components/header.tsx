@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Menu from './menu';
-import Navlinkitem from './menunavitem';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

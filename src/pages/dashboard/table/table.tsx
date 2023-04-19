@@ -6,10 +6,11 @@ import TransactionForm from '../forms/transactionform';
 import Pagination from './tablepagination';
 
 export interface IData {
-  id: number,
+  id: number;
   category: string;
   transaction: string;
   price: number;
+  date?: Date;
 }
 
 type TableType = {
